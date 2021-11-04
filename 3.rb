@@ -10,4 +10,13 @@
 #
 ## Решение:
 
+result = 0
+file = File.open("./data/3.txt","r:utf-8")
 
+IO.foreach(file) do |line|
+	numbers = line.split("\t").map {|n| n.to_i}
+	difference = numbers.max - numbers.min
+	result += difference
+	numbers.clear
+end
+puts result

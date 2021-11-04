@@ -16,3 +16,27 @@
 #
 ## Решение:
 
+require 'digest'
+
+input = gets.chomp
+
+number = 0
+number_str = 0
+
+md5_hash = ""
+
+answer = true 
+while answer do
+	number_str = number.to_s
+	test_n = ""
+	test_n = input + number_str
+	
+	md5_hash = Digest::MD5.hexdigest(test_n)
+
+	if md5_hash[0] == "0" && md5_hash[1] == "0" && md5_hash[2] == "0" && md5_hash[3] == "0" && md5_hash[4] == "0" then
+		puts number_str
+		answer = false
+	else
+		number+=1
+	end
+end

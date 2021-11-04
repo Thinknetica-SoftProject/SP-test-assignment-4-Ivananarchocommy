@@ -16,4 +16,22 @@
 #
 ## Решение:
 
+result = 0
+
+file = File.open("./data/4.txt","r:utf-8")
+
+IO.foreach(file) do |line|
+  numbers = line.split("x").map {|n| n.to_i}
+  sort = numbers.sort
+  lenght = sort[0]
+  widht = sort[1]
+  height = sort[2]
+
+  paper_gift = 2*lenght*widht +2*lenght*height + 2*widht*height + lenght*widht
+  result += paper_gift
+
+end
+
+
+puts result
 

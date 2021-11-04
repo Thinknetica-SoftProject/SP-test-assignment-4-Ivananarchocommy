@@ -16,6 +16,23 @@
 #
 ## Решение:
 
+floor_number = 0
+
+file = File.new("./data/1.txt","r:utf-8")
+
+file_content = file.read
+
+symbols = file_content.count("()")
+
+for i in (0...symbols)
+	if file_content[i] == ")" 
+		floor_number -= 1
+	else
+		floor_number += 1
+	end
+end
+
+puts floor_number
 
 
 
